@@ -3,6 +3,7 @@
     <p>{{ name }}</p>
     <p>{{ age }}</p>
     <p>{{ gender }}</p>
+    <p>{{ country }}</p>
     <button @click="handleClick">다시하기</button>
   </div>
 </template>
