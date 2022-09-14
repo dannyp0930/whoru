@@ -22,10 +22,10 @@ import { Options, Vue } from 'vue-class-component';
       e.preventDefault();
       const name = this.name;
       if (name) {
-        this.$store.dispatch('getName', name)
-        this.$store.dispatch('getAge', name)
-        this.$store.dispatch('getGender', name)
-        this.$store.dispatch('getCountry', name)
+        this.$store.dispatch('getName', name);
+        this.$store.dispatch('getAge', name);
+        this.$store.dispatch('getGender', name);
+        this.$store.dispatch('getCountry', name);
         this.$router.push('/result');
       }
     }
