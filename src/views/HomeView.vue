@@ -25,7 +25,7 @@ import { Options, Vue } from 'vue-class-component';
         this.$store.dispatch('getAge', name)
         this.$store.dispatch('getGender', name)
         this.$store.dispatch('getCountry', name)
-        this.$router.push('/about');
+        this.$router.push('/result');
       }
     }
   },
