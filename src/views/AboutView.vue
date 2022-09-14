@@ -1,9 +1,9 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
     <p>{{ name }}</p>
     <p>{{ age }}</p>
     <p>{{ gender }}</p>
+    <button @click="handleClick">다시하기</button>
   </div>
 </template>
 
@@ -19,6 +19,11 @@ import { mapState } from 'vuex';
       'gender',
       'country',
     ])
+  },
+  methods: {
+    handleClick: function() {
+      this.$router.push('/');
+    }
   }
 })
 export default class AboutView extends Vue {}

@@ -11,6 +11,11 @@
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
+  data: function () {
+    return {
+      name: null,
+    }
+  },
   methods: {
     handleSubmit: function (e: SubmitEvent) {
       e.preventDefault();
@@ -18,7 +23,7 @@ import { Options, Vue } from 'vue-class-component';
       if (name) {
         this.$store.dispatch('getName', name)
       }
-      this.name = null;
+      this.$router.push('/about');
     }
   },
 })
