@@ -1,17 +1,25 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <form v-on:submit="handleSubmit">
+      <input v-model.trim="name">
+      <button @click="handleSubmit">입력</button>
+    </form>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 @Options({
-  components: {
-    HelloWorld,
+  methods: {
+    handleSubmit: function (e: SubmitEvent) {
+      e.preventDefault();
+      const name = this.name;
+      if (name) {
+        this.$store.dispatch('getName', name)
+      }
+      this.name = null;
+    }
   },
 })
 export default class HomeView extends Vue {}
