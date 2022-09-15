@@ -3,7 +3,7 @@
     <form v-on:submit="handleSubmit">
       <h1>당신의 이름을 영어로 입력하세요</h1>
       <input v-model.trim="name">
-      <button @click="handleSubmit">결과 보기</button>
+      <button>결과 보기</button>
     </form>
   </div>
 </template>
@@ -14,7 +14,7 @@ import { Options, Vue } from 'vue-class-component';
 @Options({
   data: function () {
     return {
-      name: null,
+      name: '' as string,
     }
   },
   methods: {
@@ -31,5 +31,8 @@ import { Options, Vue } from 'vue-class-component';
     }
   },
 })
-export default class HomeView extends Vue {}
+export default class HomeView extends Vue {
+  name!: string;
+  handleSubmit!: ((payload: Event) => void);
+}
 </script>

@@ -12,6 +12,11 @@
 import { Options, Vue } from 'vue-class-component';
 import { mapState } from 'vuex';
 
+declare interface Country {
+  "country_id": string,
+  "probability": number,
+}
+
 @Options({
   computed: {
     ...mapState([
@@ -27,5 +32,12 @@ import { mapState } from 'vuex';
     }
   }
 })
-export default class AboutView extends Vue {}
+
+export default class AboutView extends Vue {
+  name!: string;
+  age!: number;
+  gender!: string;
+  country!: Array<Country>;
+  handleClick!: ((payload: MouseEvent) => void);
+}
 </script>>
